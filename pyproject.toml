@@ -1,10 +1,9 @@
 [tool.poetry]
-name = "object-tracker-example"
+name = "object-tracker"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
-readme = "README.md"
-packages = [{include = "object_tracker_example"}]
+description = "Object tracking using DeepSort, YOLO, TensorFlow, Torch and OpenCV"
+authors = ["Giovani Freitag <giovani.freitag@plantae.agr.br>"]
+readme = "readme.md"
 
 [tool.poetry.dependencies]
 python = ">=3.8.10,<3.12"

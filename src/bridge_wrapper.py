@@ -91,8 +91,12 @@ class YOLOv7_DeepSORT:
                 break
             frame_num +=1
 
-            if skip_frames and not frame_num % skip_frames: continue # skip every nth frame. When every frame is not important, you can use this to fasten the process
-            if verbose >= 1:start_time = time.time()
+            # skip every nth frame. When every frame is not important, you can use this to fasten the process
+            if skip_frames and frame_num % skip_frames:
+                continue
+
+            if verbose >= 1:
+                start_time = time.time()
 
             # -----------------------------------------PUT ANY DETECTION MODEL HERE -----------------------------------------------------------------
             yolo_dets = self.detector.detect(frame.copy(), plot_bb = False)  # Get the detections

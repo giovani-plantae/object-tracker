@@ -18,4 +18,4 @@ detector.load_model('./storage/models/yolov7x.pt',) # pass the path to the train
 tracker = YOLOv7_DeepSORT(reID_model_path="./src/deep_sort/model_weights/mars-small128.pb", detector=detector)
 
 # output = None will not save the output video
-tracker.track_video("./storage/input/video/highway-traffic.mp4", output="./storage/output/highway-traffic.mp4", show_live = True, skip_frames = 0, count_objects = True, verbose=1)
+tracker.track_video("./storage/input/video/highway-traffic.mp4", output="./storage/output/highway-traffic.mp4", show_live = True, skip_frames = 15, count_objects = True, verbose=1)

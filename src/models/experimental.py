@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from models.common import Conv, DWConv
+from src.models.common import Conv, DWConv
 from src.utils.google_utils import attempt_download
 
 

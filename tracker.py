@@ -1,3 +1,11 @@
+# For the sake of organization, every .py file must be in ./src folder
+# After the refactoring torch.load() fails to find ./src/models/yolo.py
+# - https://stackoverflow.com/a/73174585
+# - https://github.com/ultralytics/yolov5/issues/353
+# The only workaround I found atm is the next 2 lines ¯\_(ツ)_/¯
+import sys
+sys.path.insert(0, './src')
+
 from src.detection_helpers import *
 from src.tracking_helpers import *
 from src.bridge_wrapper import *

@@ -7,8 +7,8 @@ sys.path.append('./')  # to run '$ python *.py' files in subdirectories
 import torch
 import torch.nn as nn
 
-import models
-from models.experimental import attempt_load
+import src.models
+from src.models.experimental import attempt_load
 from src.utils.activations import Hardswish, SiLU
 from src.utils.general import set_logging, check_img_size
 from src.utils.torch_utils import select_device
@@ -42,12 +42,12 @@ if __name__ == '__main__':
     # Update model
     for k, m in model.named_modules():
         m._non_persistent_buffers_set = set()  # pytorch 1.6.0 compatibility
-        if isinstance(m, models.common.Conv):  # assign export-friendly activations
+        if isinstance(m, src.models.common.Conv):  # assign export-friendly activations
             if isinstance(m.act, nn.Hardswish):
                 m.act = Hardswish()
             elif isinstance(m.act, nn.SiLU):
                 m.act = SiLU()
-        # elif isinstance(m, models.yolo.Detect):
+        # elif isinstance(m, src.models.yolo.Detect):
         #     m.forward = m.forward_export  # assign forward (optional)
     model.model[-1].export = not opt.grid  # set Detect() layer grid export
     y = model(img)  # dry run

@@ -3,7 +3,7 @@ import cv2
 import torch
 from numpy import random
 
-from models.experimental import attempt_load
+from src.models.experimental import attempt_load
 from src.utils.datasets import letterbox, np
 from src.utils.general import check_img_size, non_max_suppression, apply_classifier,scale_coords, xyxy2xywh
 from src.utils.plots import plot_one_box

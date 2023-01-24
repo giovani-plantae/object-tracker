@@ -80,7 +80,7 @@ class YOLOv7_DeepSORT:
             width = int(vid.get(cv2.CAP_PROP_FRAME_WIDTH))  # by default VideoCapture returns float instead of int
             height = int(vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
             fps = int(vid.get(cv2.CAP_PROP_FPS))
-            codec = cv2.VideoWriter_fourcc(*"XVID")
+            codec = cv2.VideoWriter_fourcc(*"mp4v")
             out = cv2.VideoWriter(output, codec, fps, (width, height))
 
         frame_num = 0
